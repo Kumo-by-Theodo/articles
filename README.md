@@ -1,6 +1,6 @@
 # Kumo template to sync articles with dev.to
 
-## 1. Follow the first install doc
+## Follow the first install doc
 
 ==> [First installation](./docs/install.md) <==
 
