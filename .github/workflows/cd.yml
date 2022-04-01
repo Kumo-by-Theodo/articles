@@ -3,7 +3,7 @@ name: Syncro articles with Dev.to
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   sync-article:
