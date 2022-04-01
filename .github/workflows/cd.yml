@@ -1,0 +1,26 @@
+name: Syncro articles with Dev.to
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-article:
+    name: Check and Sync with dev.to
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Deploy to dev.to
+        run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
