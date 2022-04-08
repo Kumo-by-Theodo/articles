@@ -1,0 +1,19 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "yarn.lock": true
+  },
+  "[dotenv][ignore][properties][shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[html][javascript][json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": ["embedme", "kumo"]
+}
