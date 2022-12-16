@@ -5,7 +5,7 @@
 3. Create your API token and provide it to github actions
    1. Head to [dev.to settings](https://dev.to/settings/account)
    2. In the `DEV Community API Keys` section, chose a name for your API key and generate it
-   3. On your Github repository, go to `Settings > Security > Secrets > Actions`, click on `New repository secret`
+   3. On your Github repository, go to `Settings > Extensions > DEV Community 👩‍💻👨‍💻 API Keys`, click on `Generate API key`
    4. Name the secret `DEV_TO_GIT_TOKEN`, and set its value to your dev.to api key
 4. Replace the content of `./README.md` by the content of `./docs/README.template.md`
 
