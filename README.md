@@ -1,10 +1,11 @@
-# Kumo template to sync articles with dev.to
+# Quentin's blog source
 
-## Follow the first install doc
+https://dev.to/quentinnativel
+## Blog posts
 
-==> [First installation](./docs/install.md) <==
+- [\<BLOG POST NAME\>](https://dev.to/\<BLOG POST LINK\>)
 
-## Read documentation
+## Documentation
 
 - [Context](./docs/context.md)
 - [Usage](./docs/usage.md)
