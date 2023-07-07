@@ -2,7 +2,7 @@
 published: false
 title: 'Generate pretty reports from your cli tool'
 cover_image: 'https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/master/blog-posts/NAME-OF-YOUR-BLOG-POST/assets/your-asset.png'
-description: 'Description of the article'
+description: 'Simple way to generate report from your cli using only vite and react'
 tags: react, reporting, cli, vite
 series:
 canonical_url:
@@ -91,7 +91,7 @@ Let's write a super simple report with just a score
   // App.tsx
   import './App.css'
   function App() {
-  const score = 100
+  const score = 40
   return (
     <>
       <div>
@@ -135,4 +135,57 @@ h1 {
 ```
 
 Well, it is not the most beautiful report, but it is a start. 🤷‍♂️
-![image](assets/dummy-report.png)
+![image](assets/dummy-report-40.png)
+
+## Pass data to the report
+Now we want to pass data to the report.
+
+For sls-mentor, we used a [react context](https://react.dev/learn/passing-data-deeply-with-context) to pass the data to the report. But for the sake of simplicity, we will use here a simple variable.
+
+``` typescript
+// replace App function with following code
+
+function App() {
+  // for development purposes, we want to have a default result
+  let result: Result;
+  try
+  { 
+    result = JSON.parse('<<<RESULTS_PLACEHOLDER>>>') as Result
+  } catch (e) {
+    result = { score: 40 }
+  }
+
+  return (
+    <>
+      <div>
+        <h1>My awesome report</h1>
+        <p> Your global score is:</p>
+        <p className='score'>{result.score}</p>
+        {result.score > 50 ? <p>Congrats you're a boss! 👍</p> : <p>Keep going! 🏃‍♂️</p>}
+
+      </div>
+    </>
+  )
+}
+```
+
+The placeholder `<<<RESULTS_PLACEHOLDER>>>` will be replaced by the result of the analysis.
+
+
+## Test the template manually
+Now we have a template, we want to test it. First, let's build the report again and copy it to a new file report.html.
+
+Open the report.html in your editor, and search for `<<<RESULTS_PLACEHOLDER>>>`. Replace it with `{\"score\": 100}` (⚠️ don't forget to escape the quotes !). Save the file and open it in your browser. 
+
+You should see the score 100!! 🎉.
+![](assets/dummy-report-100.png)
+## Automate !
+In order to build the report from your cli, just automate the previous steps with a script:
+
+- duplicate the template file to a new file report.html
+- replace the placeholder with the result of the analysis and don't forget to escape the quotes
+
+Easy isn't it ? 😎
+
+Now it's your time to shine ! 🌟
+
