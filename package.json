@@ -10,10 +10,12 @@
     "prettier:write": "prettier . --write",
     "prettier:check": "prettier . -c",
     "embedme:check": "yarn embedme --verify",
-    "dev-to-git": "dev-to-git"
+    "dev-to-git": "dev-to-git",
+    "publish": "node publish.js"
   },
   "dependencies": {
     "dev-to-git": "1.4.9",
+    "dotenv": "^16.3.1",
     "embedme": "1.22.0",
     "prettier": "2.6.1"
   }
